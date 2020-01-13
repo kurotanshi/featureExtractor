@@ -35,14 +35,8 @@
   <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
 
   <script>
-    const indoor = document.querySelector('#indoor');
-    const outdoor = document.querySelector('#outdoor');
     const image = document.querySelector('#image');
-
-    const trainBtn = document.querySelector('#train');
-    const saveBtn = document.querySelector('#save');
     let canvas;
-
     const createCanvas = (w, h) => {
       const canvas = document.querySelector('canvas') || document.createElement("canvas");
       canvas.width = w;
@@ -51,8 +45,9 @@
       return canvas;
     }
 
-    // init
+
     let mobileNet = ml5.featureExtractor('MobileNet', () => {
+      // init
       classifier.load('./model.json', () => {
         let image = document.querySelector('#image');
         image.disabled = false;
