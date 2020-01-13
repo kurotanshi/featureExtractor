@@ -85,7 +85,7 @@
           } else {
             console.log(res);
             res.sort((a, b) => b.confidence - a.confidence)
-            result.innerHTML = `<h2>辨識結果: ${res[0].label}, 可信度: ${res[0].confidence}</h2>`
+            result.innerHTML = `<h2>辨識結果: ${res[0].label}, 特徵同步率: ${res[0].confidence}</h2>`
           }
         });
       };
